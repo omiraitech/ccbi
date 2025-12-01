@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { programsData } from '../data/programs';
 
 export default function Contact() {
   return (
@@ -28,8 +29,8 @@ export default function Contact() {
                 <div className="ml-4">
                   <h4 className="font-semibold text-[#1a2940] mb-1">Adresse</h4>
                   <p className="text-gray-600">
-                    123 Avenue Mohammed V<br />
-                    Casablanca, Maroc
+                    123 Avenue John Doe<br />
+                    Yaoundé, Cameroun
                   </p>
                 </div>
               </div>
@@ -41,8 +42,8 @@ export default function Contact() {
                 <div className="ml-4">
                   <h4 className="font-semibold text-[#1a2940] mb-1">Téléphone</h4>
                   <p className="text-gray-600">
-                    +212 5XX-XXXXXX<br />
-                    +212 6XX-XXXXXX
+                    +237 6XXXXXXXX<br />
+                    +237 6XXXXXXXX
                   </p>
                 </div>
               </div>
@@ -54,8 +55,8 @@ export default function Contact() {
                 <div className="ml-4">
                   <h4 className="font-semibold text-[#1a2940] mb-1">Email</h4>
                   <p className="text-gray-600">
-                    contact@ccbi.ma<br />
-                    info@ccbi.ma
+                    contact@ccbi.com<br />
+                    info@ccbi.com
                   </p>
                 </div>
               </div>
@@ -105,13 +106,9 @@ export default function Contact() {
                   Formation souhaitée
                 </label>
                 <select className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors">
-                  <option>Sélectionnez une formation</option>
-                  <option>Gestion de Chantier</option>
-                  <option>Architecture & Design</option>
-                  <option>Maintenance Industrielle</option>
-                  <option>Gestion de Production</option>
-                  <option>Travaux Publics</option>
-                  <option>Automatisation Industrielle</option>
+                  {programsData.map((program) => (
+                      <option id={program.id}>{program.title}</option>
+                  ))}
                 </select>
               </div>
               <div>

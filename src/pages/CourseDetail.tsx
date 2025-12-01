@@ -1,11 +1,18 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ChevronLeft, Clock, DollarSign, Award, Users, BookOpen, Briefcase, CheckCircle } from 'lucide-react';
+import { ChevronLeft, Clock, DollarSign, Award, Users, BookOpen, CalendarDays, CheckCircle } from 'lucide-react';
 import { programsData } from '../data/programs';
 
 export default function CourseDetail() {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const program = programsData.find(p => p.id === courseId);
+
+  const handleCourseRegistrationClick = () => {
+    const phone = '237696274761';
+    const message = `Bonjour CCBI, je souhaite m'inscrire à la formation ${program?.title}, pouvez-vous m'en dire plus?`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   if (!program) {
     return (
@@ -74,10 +81,10 @@ export default function CourseDetail() {
           <div className="bg-gradient-to-br from-[#1a2940] to-[#2d3e5f] rounded-lg p-6 text-white">
             <div className="flex items-center mb-2">
               <Award className="text-[#f5a623] mr-3" size={24} />
-              <h3 className="text-sm font-semibold text-gray-300">Certification</h3>
+              <h3 className="text-sm font-semibold text-gray-300">Attestation</h3>
             </div>
-            <p className="text-xl font-bold">{program.certification}</p>
-            {program.credits && <p className="text-gray-300 text-sm mt-1">{program.credits}</p>}
+            <p className="text-xl font-bold">Formation Qualifiante</p>
+            <p className="text-gray-300 text-sm mt-1">Attestation de formation délivrée</p>
           </div>
         </div>
 
@@ -151,11 +158,15 @@ export default function CourseDetail() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
-                      <Briefcase className="text-[#f5a623]" size={24} />
-                      <h3 className="font-semibold text-[#1a2940] text-lg">Stage Professionnel</h3>
+                      <CalendarDays className="text-[#f5a623]" size={24} />
+                      <h3 className="font-semibold text-[#1a2940] text-lg">Prochaine Session</h3>
                     </div>
                     <p className="text-gray-700 ml-9">
-                      Durée: {program.internshipDuration}
+                       {program.startDate.toLocaleDateString('fr-FR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                      })}
                     </p>
                   </div>
                   <div>
@@ -164,7 +175,7 @@ export default function CourseDetail() {
                       <h3 className="font-semibold text-[#1a2940] text-lg">Format d'Apprentissage</h3>
                     </div>
                     <p className="text-gray-700 ml-9">
-                      En ligne et en présentiel
+                      {program.level}
                     </p>
                   </div>
                 </div>
@@ -178,13 +189,13 @@ export default function CourseDetail() {
 
               <div className="space-y-6">
                 <div className="pb-6 border-b border-gray-600">
-                  <p className="text-sm text-gray-300 mb-2">Niveau</p>
+                  <p className="text-sm text-gray-300 mb-2">Mode Enseignement</p>
                   <p className="text-lg font-semibold text-[#f5a623]">{program.level}</p>
                 </div>
 
                 <div className="pb-6 border-b border-gray-600">
                   <p className="text-sm text-gray-300 mb-2">Durée Totale</p>
-                  <p className="text-lg font-semibold">{program.months} mois</p>
+                  <p className="text-lg font-semibold">{program.duration} </p>
                 </div>
 
                 <div className="pb-6 border-b border-gray-600">
@@ -198,25 +209,18 @@ export default function CourseDetail() {
                   <p className="text-xs text-gray-300 mt-1">FCFA</p>
                 </div>
 
-                {program.credits && (
-                  <div className="pb-6 border-b border-gray-600">
-                    <p className="text-sm text-gray-300 mb-2">Crédits ECTS</p>
-                    <p className="text-lg font-semibold">{program.credits}</p>
-                  </div>
-                )}
-
                 <div>
-                  <p className="text-sm text-gray-300 mb-2">Certification</p>
-                  <p className="text-lg font-semibold text-[#f5a623]">{program.certification}</p>
+                  <p className="text-sm text-gray-300 mb-2">Attestation</p>
+                  <p className="text-lg font-semibold text-[#f5a623]">Formation Qualifiante</p>
                 </div>
               </div>
 
-              <button className="w-full mt-8 bg-[#f5a623] hover:bg-[#e09515] text-white font-bold py-3 rounded-lg transition-colors">
+              <button onClick={handleCourseRegistrationClick} className="w-full mt-8 bg-[#f5a623] hover:bg-[#e09515] text-white font-bold py-3 rounded-lg transition-colors">
                 S'inscrire Maintenant
               </button>
 
               <button className="w-full mt-3 border-2 border-[#f5a623] text-[#f5a623] hover:bg-[#f5a623] hover:text-[#1a2940] font-bold py-2 rounded-lg transition-colors">
-                Demander des Informations
+                Télécharger la Brochure
               </button>
             </div>
           </div>
@@ -228,7 +232,7 @@ export default function CourseDetail() {
             Rejoignez des centaines de professionnels qui ont développé leurs compétences avec nos formations certifiées et reconnues.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#f5a623] hover:bg-[#e09515] text-white px-8 py-3 rounded-lg font-bold transition-colors">
+            <button onClick={handleCourseRegistrationClick} className="bg-[#f5a623] hover:bg-[#e09515] text-white px-8 py-3 rounded-lg font-bold transition-colors">
               S'inscrire à cette formation
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-[#1a2940] px-8 py-3 rounded-lg font-bold transition-colors">

@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img
-                src="/logo ccbi.jpeg"
+                src="/logo-ccbi.jpeg"
                 alt="CCBI Logo"
                 className="h-12 w-12 object-contain"
               />
@@ -22,12 +22,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-4 text-[#f5a623]">Formations</h4>
+            <h4 className="text-lg font-bold mb-4 text-[#f5a623]">Filières d'Expertise</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">Gestion de Chantier</a></li>
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">Architecture & Design</a></li>
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">Maintenance Industrielle</a></li>
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">Gestion de Production</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Génie Civil & BTP</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Industrie & Maintenance</a></li>
             </ul>
           </div>
 

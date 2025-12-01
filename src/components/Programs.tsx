@@ -1,4 +1,4 @@
-import { Clock, DollarSign, ChevronRight } from 'lucide-react';
+import { Clock, DollarSign, ChevronRight, CalendarDays } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { programsData } from '../data/programs';
 
@@ -64,6 +64,19 @@ export default function Programs() {
                       <span>Prix</span>
                     </div>
                     <span className="font-semibold text-[#1a2940]">{program.cost.toLocaleString()} FCFA</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <CalendarDays size={16} className="text-[#f5a623]" />
+                      <span>Prochaine Session</span>
+                    </div>
+                    <span className="font-semibold text-[#1a2940]">
+                      {program.startDate.toLocaleDateString('fr-FR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                      })}
+                    </span>
                   </div>
                 </div>
 

@@ -1,18 +1,21 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Hero from './components/Hero';
 import About from './components/About';
 import Programs from './components/Programs';
+import Expertise from './components/Expertise';
 import Statistics from './components/Statistics';
 import Testimonials from './components/Testimonials';
-import Partners from './components/Partners';
+import Pedagogy from './components/Pedagogy';
+import Funding from './components/Funding';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CourseDetail from './pages/CourseDetail';
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFilieresOpen, setIsFilieresOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -40,7 +43,7 @@ function Navigation() {
         <div className="flex justify-between items-center h-20">
           <button onClick={() => navigate('/')} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <img
-              src="/logo ccbi.jpeg"
+              src="/logo-ccbi.jpeg"
               alt="CCBI Logo"
               className="h-12 w-12 object-contain"
             />
@@ -60,6 +63,39 @@ function Navigation() {
             <button onClick={() => scrollToSection('programs')} className="text-white hover:text-[#f5a623] transition-colors">
               Formations
             </button>
+            
+            <div className="relative">
+              <button
+                onClick={() => setIsFilieresOpen(!isFilieresOpen)}
+                className="text-white hover:text-[#f5a623] transition-colors flex items-center gap-1"
+              >
+                Filières
+                <ChevronDown size={18} className={`transition-transform ${isFilieresOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isFilieresOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50">
+                  <button
+                    onClick={() => {
+                      scrollToSection('expertise');
+                      setIsFilieresOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
+                  >
+                    Génie Civil & BTP
+                  </button>
+                  <button
+                    onClick={() => {
+                      scrollToSection('expertise');
+                      setIsFilieresOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
+                  >
+                    Industrie & Maintenance
+                  </button>
+                </div>
+              )}
+            </div>
+            
             <button onClick={() => scrollToSection('contact')} className="text-white hover:text-[#f5a623] transition-colors">
               Contact
             </button>
@@ -96,6 +132,37 @@ function Navigation() {
               Formations
             </button>
             <button
+              onClick={() => setIsFilieresOpen(!isFilieresOpen)}
+              className="block w-full text-left px-3 py-2 text-white hover:bg-[#f5a623] transition-colors flex items-center justify-between"
+            >
+              Filières
+              <ChevronDown size={18} className={`transition-transform ${isFilieresOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {isFilieresOpen && (
+              <>
+                <button
+                  onClick={() => {
+                    scrollToSection('expertise');
+                    setIsFilieresOpen(false);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-6 py-2 text-white hover:bg-[#f5a623] transition-colors"
+                >
+                  Génie Civil & BTP
+                </button>
+                <button
+                  onClick={() => {
+                    scrollToSection('expertise');
+                    setIsFilieresOpen(false);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-6 py-2 text-white hover:bg-[#f5a623] transition-colors"
+                >
+                  Industrie & Maintenance
+                </button>
+              </>
+            )}
+            <button
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left px-3 py-2 text-white hover:bg-[#f5a623] transition-colors"
             >
@@ -118,11 +185,15 @@ function HomePage() {
         <About />
       </div>
       <Statistics />
+      <div id="expertise">
+        <Expertise />
+      </div>
+      <Pedagogy />
       <div id="programs">
         <Programs />
       </div>
+      <Funding />
       <Testimonials />
-      <Partners />
       <div id="contact">
         <Contact />
       </div>

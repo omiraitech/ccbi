@@ -4,8 +4,8 @@ export default function About() {
   const features = [
     {
       icon: Target,
-      title: 'Notre Mission',
-      description: 'Former des professionnels qualifiés pour répondre aux besoins du secteur du BTP et de l\'industrie',
+      title: 'Mission et Vision',
+      description: 'Offrir une formation immédiatement applicable sur le terrain.',
     },
     {
       icon: Award,

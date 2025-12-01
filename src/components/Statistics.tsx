@@ -1,33 +1,28 @@
-import { Users, GraduationCap, Award, Building2 } from 'lucide-react';
+import { Users, GraduationCap, Award } from 'lucide-react';
 
 export default function Statistics() {
   const stats = [
     {
       icon: Users,
-      value: '5000+',
-      label: 'Apprenants formés',
-    },
-    {
-      icon: GraduationCap,
-      value: '50+',
-      label: 'Programmes certifiés',
+      value: '1 500+',
+      label: 'Stagiaires Formés',
     },
     {
       icon: Award,
-      value: '90%',
-      label: 'Taux de réussite',
+      value: '92%',
+      label: 'Taux de réussite aux certifications',
     },
     {
-      icon: Building2,
-      value: '200+',
-      label: 'Entreprises partenaires',
+      icon: GraduationCap,
+      value: '20+',
+      label: 'Formateurs Experts Métier',
     },
   ];
 
   return (
     <section className="py-20 bg-[#1a2940]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
