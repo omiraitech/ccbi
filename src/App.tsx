@@ -12,6 +12,7 @@ import Funding from './components/Funding';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CourseDetail from './pages/CourseDetail';
+import ExpertiseDetail from './pages/ExpertiseDetail';
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,7 +82,7 @@ function Navigation() {
                     }}
                     className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
                   >
-                    Génie Civil & BTP
+                    Génie Civil et BTP
                   </button>
                   <button
                     onClick={() => {
@@ -90,7 +91,25 @@ function Navigation() {
                     }}
                     className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
                   >
-                    Industrie & Maintenance
+                    Industrie et Maintenance
+                  </button>
+                  <button
+                    onClick={() => {
+                      scrollToSection('expertise');
+                      setIsFilieresOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
+                  >
+                    Mine
+                  </button>
+                  <button
+                    onClick={() => {
+                      scrollToSection('expertise');
+                      setIsFilieresOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
+                  >
+                    Pétrole
                   </button>
                 </div>
               )}
@@ -148,7 +167,7 @@ function Navigation() {
                   }}
                   className="block w-full text-left px-6 py-2 text-white hover:bg-[#f5a623] transition-colors"
                 >
-                  Génie Civil & BTP
+                  Génie Civil et BTP
                 </button>
                 <button
                   onClick={() => {
@@ -158,7 +177,27 @@ function Navigation() {
                   }}
                   className="block w-full text-left px-6 py-2 text-white hover:bg-[#f5a623] transition-colors"
                 >
-                  Industrie & Maintenance
+                  Industrie et Maintenance
+                </button>
+                <button
+                  onClick={() => {
+                    scrollToSection('expertise');
+                    setIsFilieresOpen(false);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-6 py-2 text-white hover:bg-[#f5a623] transition-colors"
+                >
+                  Mine
+                </button>
+                <button
+                  onClick={() => {
+                    scrollToSection('expertise');
+                    setIsFilieresOpen(false);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-6 py-2 text-white hover:bg-[#f5a623] transition-colors"
+                >
+                  Pétrole
                 </button>
               </>
             )}
@@ -209,6 +248,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/course/:courseId" element={<CourseDetail />} />
+        <Route path="/expertise" element={<ExpertiseDetail />} />
       </Routes>
     </Router>
   );

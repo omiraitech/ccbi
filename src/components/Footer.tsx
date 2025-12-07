@@ -24,8 +24,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4 text-[#f5a623]">Filières d'Expertise</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Génie Civil & BTP</a></li>
-              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Industrie & Maintenance</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Génie Civil et BTP</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Industrie et Maintenance</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Mine</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Pétrole</a></li>
             </ul>
           </div>
 
@@ -42,10 +44,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4 text-[#f5a623]">Suivez-nous</h4>
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 hover:bg-[#f5a623] w-10 h-10 rounded-lg flex items-center justify-center transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61580924086854&mibextid=wwXIfr&mibextid=wwXIfr" target='_blank' className="bg-gray-800 hover:bg-[#f5a623] w-10 h-10 rounded-lg flex items-center justify-center transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-[#f5a623] w-10 h-10 rounded-lg flex items-center justify-center transition-colors">
+              <a href="https://www.linkedin.com/company/ccbi-centre-des-comp%C3%A9tences-btp-industrie/" target='_blank' className="bg-gray-800 hover:bg-[#f5a623] w-10 h-10 rounded-lg flex items-center justify-center transition-colors">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="bg-gray-800 hover:bg-[#f5a623] w-10 h-10 rounded-lg flex items-center justify-center transition-colors">
@@ -62,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 CCBI - Centre des Compétence BTP & Industries. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} CCBI - Centre des Compétence BTP & Industries. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

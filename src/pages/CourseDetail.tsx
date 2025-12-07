@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ChevronLeft, Clock, DollarSign, Award, Users, BookOpen, CalendarDays, CheckCircle } from 'lucide-react';
+import { ChevronLeft, Clock, DollarSign, Award, Users, BookOpen, CalendarDays, CheckCircle, ChevronDown } from 'lucide-react';
 import { programsData } from '../data/programs';
 
 export default function CourseDetail() {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const program = programsData.find(p => p.id === courseId);
+  const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
   const handleCourseRegistrationClick = () => {
     const phone = '237696274761';
@@ -124,11 +126,34 @@ export default function CourseDetail() {
                 {program.modules.map((module, index) => (
                   <div
                     key={index}
-                    className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#f5a623] hover:shadow-md transition-shadow"
+                    className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
                   >
-                    <p className="font-semibold text-[#1a2940]">
-                      {index + 1}. {module}
-                    </p>
+                    <button
+                      onClick={() => setExpandedModule(expandedModule === index ? null : index)}
+                      className="w-full bg-gray-50 p-4 flex items-center justify-between hover:bg-gray-100 transition-colors border-l-4 border-[#f5a623]"
+                    >
+                      <p className="font-semibold text-[#1a2940] text-left">
+                        {index + 1}. {module.title}
+                      </p>
+                      <ChevronDown
+                        size={20}
+                        className={`text-[#f5a623] transition-transform ${
+                          expandedModule === index ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {expandedModule === index && (
+                      <div className="bg-white p-4 border-t border-gray-200">
+                        <ul className="space-y-2">
+                          {module.submodules.map((submodule, subIndex) => (
+                            <li key={subIndex} className="flex gap-3 text-gray-700">
+                              <span className="text-[#f5a623] font-bold">•</span>
+                              <span>{submodule}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

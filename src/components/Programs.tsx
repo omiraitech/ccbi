@@ -4,6 +4,7 @@ import { programsData } from '../data/programs';
 
 export default function Programs() {
   const navigate = useNavigate();
+  const homePrograms = programsData.filter((program) => program.isHomeDisplay);
 
   const handleCourseClick = (courseId: string) => {
     navigate(`/course/${courseId}`);
@@ -24,21 +25,25 @@ export default function Programs() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programsData.map((program) => (
+          {homePrograms.map((program) => (
             <div
               key={program.id}
               onClick={() => handleCourseClick(program.id)}
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+                <picture>
+                  <source srcSet={program.image} type="image/webp" />
+                  <img
+                    src={program.image}
+                    alt={`Image ${program.title}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </picture>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <span className="absolute top-4 right-4 bg-[#f5a623] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  {program.level}
+                  {program.category}
                 </span>
               </div>
 
@@ -56,14 +61,18 @@ export default function Programs() {
                       <Clock size={16} className="text-[#f5a623]" />
                       <span>Durée</span>
                     </div>
-                    <span className="font-semibold text-[#1a2940]">{program.hours}h</span>
+                    <span className="font-semibold text-[#1a2940]">
+                      {program.hours}h
+                    </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-2 text-gray-600">
                       <DollarSign size={16} className="text-[#f5a623]" />
                       <span>Prix</span>
                     </div>
-                    <span className="font-semibold text-[#1a2940]">{program.cost.toLocaleString()} FCFA</span>
+                    <span className="font-semibold text-[#1a2940]">
+                      {program.cost.toLocaleString()} FCFA
+                    </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-2 text-gray-600">
@@ -82,11 +91,23 @@ export default function Programs() {
 
                 <button className="w-full bg-[#f5a623] hover:bg-[#e09515] text-white font-semibold py-2 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
                   En savoir plus
-                  <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight
+                    size={18}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </button>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <button
+            onClick={() => navigate('/expertise')}
+            className="bg-[#1a2940] hover:bg-[#f5a623] text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+          >
+            Voir toutes les formations
+          </button>
         </div>
       </div>
     </section>

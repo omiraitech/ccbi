@@ -1,6 +1,11 @@
 import { ChevronRight } from 'lucide-react';
 
 export default function Hero() {
+  
+  const HandleSessionRegClick = () => {
+    const url = "https://forms.gle/ZMjYraGtxLQjGdzr6";
+    window.open(url, '_blank');
+  };
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
       <div
@@ -30,7 +35,7 @@ export default function Hero() {
             Découvrir notre catalogue
             <ChevronRight className="ml-2" size={20} />
           </button>
-          <button className="bg-transparent border-2 border-white hover:bg-white hover:text-[#1a2940] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+          <button onClick={HandleSessionRegClick} className="bg-transparent border-2 border-white hover:bg-white hover:text-[#1a2940] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
             S'inscrire à une session d'information
           </button>
         </div>

@@ -1,5 +1,4 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { programsData } from '../data/programs';
 
 export default function Contact() {
   return (
@@ -103,12 +102,24 @@ export default function Contact() {
               </div>
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">
-                  Formation souhaitée
+                  Numéro de téléphone (Avec l'indicatif du pays)
+                </label>
+                <input
+                  type="tel"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
+                  placeholder="WhatsApp"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Motif
                 </label>
                 <select className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors">
-                  {programsData.map((program) => (
-                      <option id={program.id}>{program.title}</option>
-                  ))}
+                  
+                      <option id="training">Formation</option>
+                      <option id="partnership">Partenariat</option>
+                      <option id="funding">Financement</option>
+                  
                 </select>
               </div>
               <div>
