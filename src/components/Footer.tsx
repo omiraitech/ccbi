@@ -34,10 +34,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4 text-[#f5a623]">Liens Rapides</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">À Propos</a></li>
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">Actualités</a></li>
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">Carrières</a></li>
-              <li><a href="#" className="hover:text-[#f5a623] transition-colors">FAQ</a></li>
+              <li><a href="#about" className="hover:text-[#f5a623] transition-colors">À Propos</a></li>
+              <li><a href="#programs" className="hover:text-[#f5a623] transition-colors">Formations</a></li>
+              <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Filières</a></li>
             </ul>
           </div>
 

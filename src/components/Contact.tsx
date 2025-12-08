@@ -118,7 +118,8 @@ export default function Contact() {
                   
                       <option id="training">Formation</option>
                       <option id="partnership">Partenariat</option>
-                      <option id="funding">Financement</option>
+                      <option id="funding">Sponsoring</option>
+                      <option id="trainingPartner">Devenir Formateur</option>
                   
                 </select>
               </div>

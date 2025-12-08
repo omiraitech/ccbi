@@ -76,7 +76,7 @@ export default function CourseDetail() {
               <DollarSign className="text-white mr-3" size={24} />
               <h3 className="text-sm font-semibold">Tarif</h3>
             </div>
-            <p className="text-3xl font-bold">{program.cost.toLocaleString()} FCFA</p>
+            <p className="text-3xl font-bold">{program.cost.toLocaleString()}</p>
             <p className="text-white text-sm mt-1">Investissement formation</p>
           </div>
 
@@ -173,6 +173,38 @@ export default function CourseDetail() {
                 ))}
               </div>
             </section>
+
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold text-[#1a2940] mb-6 flex items-center">
+                <div className="w-1 h-8 bg-[#f5a623] mr-4"></div>
+                Certifications
+              </h2>
+              <div className="space-y-3">
+                {program.certification.map((cert, index) => (
+                  <div key={index} className="flex gap-3 p-3 bg-gradient-to-r from-[#f5a623]/10 to-transparent rounded-lg border-l-4 border-[#f5a623]">
+                    <CheckCircle className="text-[#f5a623] flex-shrink-0 mt-0.5" size={20} />
+                    <p className="text-gray-700 font-medium">{cert}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {program.competences && program.competences.length > 0 && (
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-[#1a2940] mb-6 flex items-center">
+                  <div className="w-1 h-8 bg-[#f5a623] mr-4"></div>
+                  Compétences à la fin de la formation
+                </h2>
+                <div className="space-y-2">
+                  {program.competences.map((competence, index) => (
+                    <div key={index} className="flex gap-3">
+                      <CheckCircle className="text-[#f5a623] flex-shrink-0 mt-1" size={20} />
+                      <p className="text-gray-700">{competence}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <section>
               <h2 className="text-3xl font-bold text-[#1a2940] mb-6 flex items-center">

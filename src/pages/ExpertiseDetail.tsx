@@ -67,8 +67,15 @@ export default function ExpertiseDetail() {
     }
   };
 
-  const handleCourseClick = (courseId: string) => {
-    navigate(`/course/${courseId}`);
+  const handleCourseClick = (courseId: string, isVisible: boolean, title: string) => {
+    if (!isVisible) {
+      const phone = '237696274761';
+      const message = `Bonjour CCBI, je souhaite en savoir plus sur la formation ${title}, pouvez-vous m'en dire plus?`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    } else {
+      navigate(`/course/${courseId}`);
+    }
   };
 
   return (
@@ -169,7 +176,7 @@ export default function ExpertiseDetail() {
                 {filteredPrograms.map((program) => (
                   <div
                     key={program.id}
-                    onClick={() => handleCourseClick(program.id)}
+                    onClick={() => handleCourseClick(program.id, program.isVisible, program.title)}
                     className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"
                   >
                     <div className="relative h-48 overflow-hidden">
@@ -213,7 +220,7 @@ export default function ExpertiseDetail() {
                             <span>Prix</span>
                           </div>
                           <span className="font-semibold text-[#1a2940]">
-                            {program.cost.toLocaleString()} FCFA
+                            {program.cost.toLocaleString()} 
                           </span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
@@ -232,7 +239,7 @@ export default function ExpertiseDetail() {
                       </div>
 
                       <button className="w-full bg-[#f5a623] hover:bg-[#e09515] text-white font-semibold py-2 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
-                        En savoir plus
+                        {program.isVisible ? 'En savoir plus' : 'Demander des informations'}
                         <ChevronRight
                           size={18}
                           className="group-hover:translate-x-1 transition-transform"
