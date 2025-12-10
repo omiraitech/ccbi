@@ -186,13 +186,20 @@ export default function ExpertiseDetail() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <span className="absolute top-4 right-4 bg-[#f5a623] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        {program.category}
-                      </span>
+
+                      {program.level === 'En ligne' && (
+                        <span className="absolute left-4 bottom-4 bg-[#1a2940] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          100 % En Ligne
+                        </span>
+                      )}
                     </div>
 
                     <div className="p-6">
-                      <div className="mb-3">
+                      {/* category tag placed directly after the image */}
+                      <div className="mb-3 flex flex-wrap gap-2">
+                        <span className="inline-block bg-[#f5a623] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          {program.category}
+                        </span>
                         <span className="inline-block bg-gray-100 text-[#1a2940] px-3 py-1 rounded-full text-xs font-semibold">
                           {program.subCategory}
                         </span>

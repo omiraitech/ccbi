@@ -43,12 +43,22 @@ export default function Programs() {
 
                 {/* increase opacity to improve text contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <span className="absolute top-4 right-4 bg-[#f5a623] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  {program.category}
-                </span>
+
+                {program.level === 'En ligne' && (
+                  <span className="absolute left-4 bottom-4 bg-[#1a2940] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    100 % En Ligne
+                  </span>
+                )}
               </div>
 
               <div className="p-6">
+                {/* category tag placed directly after the image */}
+                <div className="mb-3">
+                  <span className="inline-block bg-[#f5a623] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    {program.category}
+                  </span>
+                </div>
+
                 <h3 className="text-2xl font-bold text-[#1a2940] mb-2">
                   {program.title}
                 </h3>
