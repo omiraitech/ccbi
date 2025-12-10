@@ -1624,7 +1624,7 @@ export const programsData: Program[] = [
   },
 
   // III - Pétrole
-    // 1. Sécurité industrielle, Qualité et Environnement
+  // 1. Sécurité industrielle, Qualité et Environnement
   {
     id: 'petrole-formation-hse-levels-1-2-4-permis-travail',
     title: "Formations HSE Levels 1, 2,4 et Permis de Travail",
@@ -1751,7 +1751,7 @@ export const programsData: Program[] = [
     isHomeDisplay: true,
     isVisible: true,
   },
-   {
+  {
     id: 'petrole-sauvetage-secourisme-milieu-isole',
     title: "Sauvetage et Secourisme en Milieu Isolé",
     shortDescription: "Formez-vous aux techniques de sauvetage et secourisme adaptées aux environnements isolés et aux zones d'exploitation.",
@@ -1808,6 +1808,154 @@ export const programsData: Program[] = [
     category: 'Pétrole',
     subCategory: 'Sécurité industrielle, Qualité et Environnement',
     certification: ['Attestation de formation délivrée', "Certificat de Secouriste en Milieu Isolé"],
+    isHomeDisplay: true,
+    isVisible: true,
+  },
+  {
+    id: 'petrole-prevention-risques-chimiques',
+    title: "Prévention des Risques Chimiques",
+    shortDescription: "Identifier, prévenir et gérer les risques liés aux produits chimiques en milieu industriel : FDS, stockage, EPI et intervention d'urgence.",
+    description: "Formation pratique pour opérateurs, techniciens et responsables HSE visant à maîtriser le langage chimique (SGH/CLP), l'interprétation des Fiches de Données de Sécurité (FDS), les règles de stockage et de manipulation sécurisées, ainsi que les procédures d'intervention et de confinement en cas de fuite ou déversement. Comprend ateliers pratiques, simulations de déversement et recommandations pour l'élimination des déchets dangereux.",
+    duration: 'Typiquement 3 jours complets',
+    months: 0,
+    level: 'Hybride',
+    hours: 14,
+    cost: "200 000 FCFA (€ 305)",
+    startDate: new Date('2026-01-15'),
+    image: 'https://images.pexels.com/photos/209230/pexels-photo-209230.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    objectives: [
+      "Savoir Identifier et interpréter la signalisation des produits chimiques et les fiches de données de sécurité.",
+      "Savoir Appliquer les mesures de prévention pour manipuler, transvaser et stocker les produits chimiques.",
+      "Savoir Adopter la bonne procédure en cas de déversement, de fuite, d'incendie chimiques ou d'exposition corporelle.",
+      "Maîtriser les obligations légales et les règles d'hygiène spécifiques aux agents chimiques dangereux."
+    ],
+    targetAudience: [
+      "Personnel de production",
+      "Personnel de laboratoire et de maintenance ( Manipulation des solvants, huiles, produits de traitement)",
+      "Responsable HSE/Magasiniers",
+      "Logisticien",
+      "Technicien intervenants sur des sites avec risques d'exposition élevés aux produits chimiques"
+    ],
+    competences: [],
+    modules: [
+      {
+        title: "Comprendre le Danger Chimiques",
+        submodules: [
+          "Le langage chimique: le système SGH/CLP ( pictogrammes, mentions de danger H, conseil de prudence P).",
+          "Les Fiches de Données de Sécurité (FDS): Structure, interprétation des 16 rubriques, et identification des informations cruciales.",
+          "Les Voies de Pénétration : Risques par inhalation (poussière, gaz vapeurs ), cutanée et ingestion.",
+          "Classification des produits : Toxiques, corrisif inflammable, explosif."
+        ]
+      },
+      {
+        title: "Prévention et Stockage Sécurisé",
+        submodules: [
+          "Règlementation du stockage : les règles d'incompatibilité et l'application du Zonage ATEX ( Atmosphère Explosibles).",
+          "Protection Collective et Individuelle ( EPI) : Ventilation, captage à la source, douches de sécurité. Choix des gants, masques et combinaison selon le produit",
+          "Hygiène et Suivi : Procédures de nettoyage des outils et des zones de travail, suivi médical des travailleurs exposés.",
+          "Le Document Unique : Intégration de l'évaluation du risque chimique dans le DUERP."
+        ]
+      },
+      {
+        title: "Procédure d'intervention et d'urgence",
+        submodules: [
+          "Déversement accidentels ; Procédure d'alerte, isolement de la zone, et utilisation des Kits anti-pollution.",
+          "Incendie Chimiques : Stratégie de lutte.",
+          "Secours à la victime : Procédures d'urgence en cas de projection cutanée ou oculaire.",
+          "Atelier pratique : simulation d'un petit déversement contrôle et utilisation des absorbants."
+        ]
+      },
+      {
+        title: "Environnement et Élimination",
+        submodules: [
+          "Déchets chimiques : Classification et obligations de traçabilité.",
+          "Filières d'élimination : Stockage temporaire des Déchets Dangereux ( DD) avant l'enlèvement.",
+          "Audit rapide des pratiques de sécurité chimiques du participant."
+        ]
+      }
+    ],
+    category: 'Pétrole',
+    subCategory: 'Sécurité industrielle, Qualité et Environnement',
+    certification: ['Attestation de formation délivrée', "Maîtrise de la Sécurité Chimique et Gestion des Risques Associés"],
+    isHomeDisplay: true,
+    isVisible: true,
+  },
+
+  // IV - Mine
+  // 1. Management et Opération
+
+  {
+    id: 'mine-superviseur-minier',
+    title: "Superviseur Minier",
+    shortDescription: "Formez-vous à encadrer les opérations minières quotidiennes, en développant des compétences clés et le respect des réglementations sur site.",
+    description: "Cette formation couvre les aspects essentiels tels que le développement du leadership, la coordination des activités d'extraction (surface et souterrain), la gestion des ressources matérielles et humaines, la mise en œuvre des politiques de sécurité (prévention des incidents, culture de sécurité) et l'amélioration continue des performances.",
+    duration: 'Typiquement 3 jours complets',
+    months: 0,
+    level: 'Hybride',
+    hours: 35,
+    cost: "200 000 FCFA (€ 305)",
+    startDate: new Date('2026-01-15'),
+    image: 'https://images.pexels.com/photos/28196491/pexels-photo-28196491.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    objectives: [
+      "Appliquer et faire respecter les protocoles de sécurité les plus strictes (HSE) et gérer les systèmes de permis de travail.Appliquer et faire respecter les protocoles de sécurité les plus strictes (HSE) et gérer les systèmes de permis de travail.",
+      "Traduire le plan Minier théorique en objectifs de production quotidienne réalisables. Allouer efficacement les ressources et optimiser le cycle d'extraction.",
+      "Diriger et motiver des équipes diverses, gérer les conflits sur le terrain et encadrer les opérateurs juniors.",
+      "Assurer le suivi des objectifs de production, rapport et contrôler les coût opérationnels."
+    ],
+    targetAudience: [
+      "Chef d'équipe",
+      "Ingénieur miniers ou Géologues en début de carrière",
+      "Personnel de sécurité souhaitant étendre ses compétences à la gestion de la production"
+    ],
+    competences: [],
+    modules: [
+      {
+        title: "Leadership et Gestion des Équipes",
+        submodules: [
+          "Role et Responsabilités : La transition d'opérateur à Superviseur.",
+          "Communication efficace : Donner des instructions claires, écoute active et feedback constructifs.",
+          "Gestion des Ressources Humaines : Motivation d'équipes multiculturelle, gestion des performances et des absences.",
+          "Formation sur le terrain : Technique de coaching et de formation des nouveaux opérateurs aux procédures standards."
+        ]
+      },
+      {
+        title: "Sécurité et Conformité HSE Avancée",
+        submodules: [
+          "Règlementation Minière Locale : Focus sur le code minier du pays et ses décrets d'application en matière de sécurité.",
+          "Gestion des Risques Spécifiques : Évaluations des risques pour le contrôle du sol ( éboulements), la ventilation et les risques d'incendie dans les zones de stockage/ souterraines.",
+          "Permis de Travail Avancés : Maîtrise de l'émission et de la clôture des permis pour les forages, les travaux souterrains, et la manipulation d'explosif.",
+          "Analyse d'accident : Méthode de l'arbre des Causes et rédaction de rapports d'incident."
+        ]
+      },
+      {
+        title: "Planification Opérationnelle et contrôle.",
+        submodules: [
+          "Lecture du Plan Minier : Comprendre les objectifs de court terme issus de la planification à long terme.",
+          "Ordonnancement du cycle Minier : Coordination des phases de forage, dynamitage ( Tir), chargement et transport.",
+          "Gestion des Ressources : Allocation des camions, pelles et engins lourds pour maximiser le taux de disponibilité.",
+          "Ventilation et soutènement : Contrôle des conditions de travail et des besoins en soutènement des galeries."
+        ]
+      },
+      {
+        title: "Maintenance et intégrité des Équipements",
+        submodules: [
+          "Interfaces Maintenance/Opération : Procédures de mise en sécurité et de consignation.",
+          "Inspection Pré -Operationnelle : Check-lists et identification des défauts critiques sur les engins lourds.",
+          "Rapport et Suivi : Documentation des défauts et communication des besoins de réparation."
+        ]
+      },
+      {
+        title: "Rapports et Indicateurs de Performances ( KPI)",
+        submodules: [
+          "Rapport de Quart : Techniques de rédaction de rapports clairs, concis et précis ( Production, incidents, personnel).",
+          "Indicateurs clés : Suivi des KPIs ( Tonnage extrait, taux de disponibilité des équipements, taux de fréquence des accidents).",
+          "Maîtrise des coûts : Sensibilisation aux coûts directs ( carburant, explosif ) au budget du quart de travail."
+        ]
+      }
+    ],
+    category: 'Mine',
+    subCategory: 'Management et Opération',
+    certification: ['Attestation de formation délivrée', "Certificat de Superviseur Minier Certifié"],
     isHomeDisplay: true,
     isVisible: true,
   },

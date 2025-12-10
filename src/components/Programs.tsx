@@ -41,7 +41,8 @@ export default function Programs() {
                   />
                 </picture>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                {/* increase opacity to improve text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <span className="absolute top-4 right-4 bg-[#f5a623] text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {program.category}
                 </span>
@@ -71,7 +72,7 @@ export default function Programs() {
                       <span>Prix</span>
                     </div>
                     <span className="font-semibold text-[#1a2940]">
-                      {program.cost.toLocaleString()} FCFA
+                      {program.cost.toLocaleString()}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">

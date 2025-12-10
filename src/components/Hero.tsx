@@ -5,7 +5,9 @@ export default function Hero() {
   const navigate = useNavigate();
   
   const HandleSessionRegClick = () => {
-    const url = "https://forms.gle/ZMjYraGtxLQjGdzr6";
+    const phone = '237696274761';
+    const message = "Bonjour CCBI, je souhaite m'inscrire à une session d'information.";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
   return (

@@ -37,6 +37,10 @@ export default function Footer() {
               <li><a href="#about" className="hover:text-[#f5a623] transition-colors">À Propos</a></li>
               <li><a href="#programs" className="hover:text-[#f5a623] transition-colors">Formations</a></li>
               <li><a href="#expertise" className="hover:text-[#f5a623] transition-colors">Filières</a></li>
+              <li><a href="/devenir-formateur" className="hover:text-[#f5a623] transition-colors">Devenir Formateur</a></li>
+              <li><a href="/devenir-partenaire" className="hover:text-[#f5a623] transition-colors">Devenir Partenaire</a></li>
+              <li><a href="/entreprises" className="hover:text-[#f5a623] transition-colors">Formations pour entreprises</a></li>
+              <li><a href="/contact" className="hover:text-[#f5a623] transition-colors">Contactez-nous</a></li>
             </ul>
           </div>
 
@@ -63,7 +67,17 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} CCBI - Centre des Compétence BTP & Industries. Tous droits réservés.</p>
+          <p>
+            &copy; {new Date().getFullYear()} CCBI - Centre des Compétence BTP & Industries. Tous droits réservés. Powered by{' '}
+            <a
+              href="https://www.omiraitech.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#f5a623] hover:underline"
+            >
+              omirai
+            </a>
+          </p>
         </div>
       </div>
     </footer>

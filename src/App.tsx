@@ -13,6 +13,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CourseDetail from './pages/CourseDetail';
 import ExpertiseDetail from './pages/ExpertiseDetail';
+import DevenirFormateur from './pages/DevenirFormateur';
+import DevenirPartenaire from './pages/DevenirPartenaire';
+import FormationsEntreprise from './pages/FormationsEntreprise';
+import ContactUs from './pages/ContactUs';
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -115,7 +119,7 @@ function Navigation() {
               )}
             </div>
             
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-[#f5a623] transition-colors">
+            <button onClick={() => navigate('/contact')} className="text-white hover:text-[#f5a623] transition-colors">
               Contact
             </button>
           </div>
@@ -202,7 +206,7 @@ function Navigation() {
               </>
             )}
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => { navigate('/contact'); setIsMenuOpen(false); }}
               className="block w-full text-left px-3 py-2 text-white hover:bg-[#f5a623] transition-colors"
             >
               Contact
@@ -249,6 +253,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/course/:courseId" element={<CourseDetail />} />
         <Route path="/expertise" element={<ExpertiseDetail />} />
+        <Route path="/devenir-formateur" element={<DevenirFormateur />} />
+        <Route path="/devenir-partenaire" element={<DevenirPartenaire />} />
+        <Route path="/entreprises" element={<FormationsEntreprise />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </Router>
   );

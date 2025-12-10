@@ -48,6 +48,8 @@ export default function CourseDetail() {
           alt={program.title}
           className="w-full h-full object-cover"
         />
+        {/* add darker overlay to improve readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a2940] via-[#1a2940]/70 to-transparent flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">

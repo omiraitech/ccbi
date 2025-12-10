@@ -1,6 +1,20 @@
+import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export default function Contact() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [motif, setMotif] = useState('Formation');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const phoneNumber = '237696274761';
+    const text = `Bonjour CCBI, Je vous contacte depuis le site. Nom: ${name} Email: ${email} Téléphone: ${phone} Motif: ${motif} Message: ${message}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,13 +93,15 @@ export default function Contact() {
             <h3 className="text-2xl font-bold text-[#1a2940] mb-6">
               Envoyez-nous un message
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">
                   Nom complet
                 </label>
                 <input
                   type="text"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
                   placeholder="Votre nom"
                 />
@@ -96,16 +112,20 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
                   placeholder="votre.email@exemple.com"
                 />
               </div>
               <div>
                 <label className="block text-gray-700 font-semibold mb-2">
-                  Numéro de téléphone (Avec l'indicatif du pays)
+                  Numéro WhatsApp (Avec l'indicatif du pays)
                 </label>
                 <input
                   type="tel"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
                   placeholder="WhatsApp"
                 />
@@ -114,13 +134,15 @@ export default function Contact() {
                 <label className="block text-gray-700 font-semibold mb-2">
                   Motif
                 </label>
-                <select className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors">
-                  
-                      <option id="training">Formation</option>
-                      <option id="partnership">Partenariat</option>
-                      <option id="funding">Sponsoring</option>
-                      <option id="trainingPartner">Devenir Formateur</option>
-                  
+                <select
+                  value={motif}
+                  onChange={e => setMotif(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
+                >
+                  <option id="training">Formation</option>
+                  <option id="partnership">Partenariat</option>
+                  <option id="funding">Sponsoring</option>
+                  <option id="trainingPartner">Devenir Formateur</option>
                 </select>
               </div>
               <div>
@@ -129,7 +151,9 @@ export default function Contact() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors resize-none"
                   placeholder="Votre message..."
                 ></textarea>
               </div>
@@ -137,7 +161,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-[#f5a623] hover:bg-[#e09515] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
-                Envoyer le message
+                Envoyer le message (WhatsApp)
               </button>
             </form>
           </div>
