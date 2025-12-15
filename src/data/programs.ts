@@ -116,7 +116,7 @@ export const programsData: Program[] = [
     hours: 35,
     cost: "300 428 FCFA (€ 458)",
     startDate: new Date('2026-01-15'),
-    image: 'https://images.pexels.com/photos/46801/coal-briquette-black-46801.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&w=1200',
     objectives: [
       "Analyser l'impact environnemental des matériaux de construction grâce à l'analyse du cycle de vie et principes d'approche Bas Carbone.",
       "Intégrer les exigences de la réglementation environnementale en vigueur spécifiques au volet Carbone et Matériaux.",
@@ -313,7 +313,7 @@ export const programsData: Program[] = [
     hours: 28,
     cost: "300 428 FCFA (€ 458)",
     startDate: new Date('2026-01-15'),
-    image: 'https://images.pexels.com/photos/373489/pexels-photo-373489.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.pexels.com/photos/8961133/pexels-photo-8961133.jpeg?auto=compress&cs=tinysrgb&w=1200',
     objectives: [
       "Planification : Établir, Structurer et visualiser la planification d'un Chantier (Gros Œuvre et/ou Corps d'état secondaire)",
       "Ordonnancement : Optimiser les enchaînements des tâches, identifier les marges libres et Totales, et maîtriser le chemin critique du projet",
@@ -1895,7 +1895,7 @@ export const programsData: Program[] = [
     hours: 35,
     cost: "200 000 FCFA (€ 305)",
     startDate: new Date('2026-01-15'),
-    image: 'https://images.pexels.com/photos/28196491/pexels-photo-28196491.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: '/superviseur-minier.png',
     objectives: [
       "Appliquer et faire respecter les protocoles de sécurité les plus strictes (HSE) et gérer les systèmes de permis de travail.Appliquer et faire respecter les protocoles de sécurité les plus strictes (HSE) et gérer les systèmes de permis de travail.",
       "Traduire le plan Minier théorique en objectifs de production quotidienne réalisables. Allouer efficacement les ressources et optimiser le cycle d'extraction.",

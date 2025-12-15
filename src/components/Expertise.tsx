@@ -40,7 +40,7 @@ export default function Expertise() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1a2940] mb-4">
-            Les Filières d'Expertise
+            Les Filières d'Expertises
           </h2>
           <div className="w-24 h-1 bg-[#f5a623] mx-auto mb-6"></div>
         </div>

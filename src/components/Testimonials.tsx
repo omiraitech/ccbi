@@ -5,19 +5,19 @@ export default function Testimonials() {
     {
       name: 'Ahmed Bennani',
       role: 'Chef de Chantier',
-      company: 'Construction Moderna',
+      country: 'RDC',
       text: 'La formation en gestion de chantier m\'a permis d\'évoluer rapidement dans ma carrière. Les formateurs sont des professionnels expérimentés qui partagent leur savoir-faire.',
     },
     {
       name: 'Fatima El Amrani',
       role: 'Ingénieure Industrielle',
-      company: 'TechnoIndustrie',
+      country: 'Cameroun',
       text: 'Grâce au programme d\'automatisation industrielle, j\'ai acquis les compétences techniques nécessaires pour diriger des projets complexes. Une formation de qualité exceptionnelle.',
     },
     {
       name: 'Mohamed Idrissi',
       role: 'Architecte',
-      company: 'Design & Build Co.',
+      country: 'Gabon',
       text: 'Le CCBI offre une approche pédagogique moderne et pratique. J\'ai pu appliquer immédiatement mes nouvelles compétences sur le terrain.',
     },
   ];
@@ -54,7 +54,7 @@ export default function Testimonials() {
                   {testimonial.role}
                 </p>
                 <p className="text-[#f5a623] text-sm font-semibold">
-                  {testimonial.company}
+                  {testimonial.country}
                 </p>
               </div>
             </div>
