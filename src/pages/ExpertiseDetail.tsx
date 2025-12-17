@@ -92,7 +92,7 @@ export default function ExpertiseDetail() {
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Filières d'Expertise
+              Filières d'Expertises
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl">
               Explorez toutes nos formations par filière et domaine de spécialisation

@@ -42,6 +42,10 @@ function Navigation() {
     setIsMenuOpen(false);
   };
 
+  const handleExploreClick = (category: string) => {
+    navigate(`/expertise?category=${encodeURIComponent(category)}`);
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-[#1a2940] shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +85,7 @@ function Navigation() {
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50">
                   <button
                     onClick={() => {
-                      scrollToSection('expertise');
+                      handleExploreClick('Génie Civil et BTP');
                       setIsFilieresOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
@@ -90,7 +94,7 @@ function Navigation() {
                   </button>
                   <button
                     onClick={() => {
-                      scrollToSection('expertise');
+                      handleExploreClick('Industrie et Maintenance');
                       setIsFilieresOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
@@ -99,7 +103,7 @@ function Navigation() {
                   </button>
                   <button
                     onClick={() => {
-                      scrollToSection('expertise');
+                      handleExploreClick('Mine');
                       setIsFilieresOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
@@ -108,7 +112,7 @@ function Navigation() {
                   </button>
                   <button
                     onClick={() => {
-                      scrollToSection('expertise');
+                      handleExploreClick('Pétrole');
                       setIsFilieresOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 text-[#1a2940] hover:bg-[#f5a623] hover:text-white transition-colors"
@@ -165,7 +169,7 @@ function Navigation() {
               <>
                 <button
                   onClick={() => {
-                    scrollToSection('expertise');
+                    handleExploreClick('Génie Civil et BTP');
                     setIsFilieresOpen(false);
                     setIsMenuOpen(false);
                   }}
@@ -175,7 +179,7 @@ function Navigation() {
                 </button>
                 <button
                   onClick={() => {
-                    scrollToSection('expertise');
+                    handleExploreClick('Industrie et Maintenance');
                     setIsFilieresOpen(false);
                     setIsMenuOpen(false);
                   }}
@@ -185,7 +189,7 @@ function Navigation() {
                 </button>
                 <button
                   onClick={() => {
-                    scrollToSection('expertise');
+                    handleExploreClick('Mine');
                     setIsFilieresOpen(false);
                     setIsMenuOpen(false);
                   }}
@@ -195,7 +199,7 @@ function Navigation() {
                 </button>
                 <button
                   onClick={() => {
-                    scrollToSection('expertise');
+                    handleExploreClick('Pétrole');
                     setIsFilieresOpen(false);
                     setIsMenuOpen(false);
                   }}
