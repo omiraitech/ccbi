@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Phone } from 'lucide-react';
 import Footer from '../components/Footer';
 
@@ -21,6 +22,14 @@ export default function FormationsEntreprise() {
 
   return (
     <main className="min-h-screen bg-gray-50 pt-24">
+      <Helmet>
+        <title>Formations pour Entreprises | Solutions Intra | CCBI</title>
+        <meta name="description" content="Solutions de formation intra-entreprise pour renforcer les compétences techniques et managériales de vos équipes. Diagnostic, conception, déploiement." />
+        <meta name="keywords" content="formation entreprise, intra-entreprise, diagnostic, compétences, développement RH, CCBI" />
+        <link rel="canonical" href="https://www.ccbi-afrique.com/entreprises" />
+        <meta property="og:title" content="Formations pour Entreprises - CCBI" />
+        <meta property="og:description" content="Solutions de formation intra-entreprise pour renforcer les compétences de vos équipes" />
+      </Helmet>
       <header className="relative">
         <div
           className="h-64 md:h-80 bg-cover bg-center flex items-center relative"

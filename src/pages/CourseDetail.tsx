@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ChevronLeft, Clock, DollarSign, Award, Users, BookOpen, CalendarDays, CheckCircle, ChevronDown } from 'lucide-react';
 import { programsData } from '../data/programs';
 
@@ -18,22 +19,57 @@ export default function CourseDetail() {
 
   if (!program) {
     return (
-      <div className="min-h-screen flex items-center justify-center pt-20">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-[#1a2940] mb-4">Formation non trouvée</h1>
-          <button
-            onClick={() => navigate('/')}
-            className="bg-[#f5a623] hover:bg-[#e09515] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-          >
-            Retour à l'accueil
-          </button>
+      <>
+        <Helmet>
+          <title>Formation non trouvée | CCBI</title>
+          <meta name="description" content="Formation non trouvée. Découvrez nos autres formations professionnelles." />
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
+        <div className="min-h-screen flex items-center justify-center pt-20">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-[#1a2940] mb-4">Formation non trouvée</h1>
+            <button
+              onClick={() => navigate('/')}
+              className="bg-[#f5a623] hover:bg-[#e09515] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Retour à l'accueil
+            </button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <>
+      <Helmet>
+        <title>{program.title} - Formation Professionnelle | CCBI</title>
+        <meta name="description" content={program.shortDescription} />
+        <meta name="keywords" content={`${program.title}, formation, ${program.category}, cours, CCBI`} />
+        <link rel="canonical" href={`https://www.ccbi-afrique.com/course/${courseId}`} />
+        <meta property="og:title" content={program.title} />
+        <meta property="og:description" content={program.shortDescription} />
+        <meta property="og:image" content={program.image} />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": program.title,
+            "description": program.shortDescription,
+            "provider": {
+              "@type": "Organization",
+              "name": "CCBI - Centre des Compétences BTP & Industries",
+            "url": "https://www.ccbi-afrique.com/",
+            "logo": "https://www.ccbi-afrique.com/logo-ccbi.jpeg"
+            },
+            "duration": `PT${program.hours}H`,
+            "price": program.cost,
+            "image": program.image
+          })}
+        </script>
+      </Helmet>
+      <div className="min-h-screen bg-white pt-20">
       <button
         onClick={() => navigate('/#programs')}
         className="fixed top-24 left-4 md:left-8 z-40 bg-[#1a2940] text-white p-2 rounded-lg hover:bg-[#f5a623] transition-colors flex items-center gap-2"
@@ -46,6 +82,8 @@ export default function CourseDetail() {
         <img
           src={program.image}
           alt={program.title}
+          width={1200}
+          height={500}
           className="w-full h-full object-cover"
         />
         {/* add darker overlay to improve readability */}
@@ -300,6 +338,7 @@ export default function CourseDetail() {
           </div>
         </section>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

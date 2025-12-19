@@ -37,6 +37,9 @@ export default function Programs() {
                   <img
                     src={program.image}
                     alt={`Image ${program.title}`}
+                    width={400}
+                    height={300}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </picture>

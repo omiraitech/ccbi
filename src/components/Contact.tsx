@@ -131,18 +131,19 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                <label htmlFor="motif-contact-select" className="block text-gray-700 font-semibold mb-2">
                   Motif
                 </label>
                 <select
+                  id="motif-contact-select"
                   value={motif}
                   onChange={e => setMotif(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#f5a623] focus:outline-none transition-colors"
                 >
-                  <option id="training">Formation</option>
-                  <option id="partnership">Partenariat</option>
-                  <option id="funding">Sponsoring</option>
-                  <option id="trainingPartner">Devenir Formateur</option>
+                  <option value="formation">Formation</option>
+                  <option value="partnership">Partenariat</option>
+                  <option value="funding">Sponsoring</option>
+                  <option value="trainingPartner">Devenir Formateur</option>
                 </select>
               </div>
               <div>

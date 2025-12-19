@@ -1,0 +1,25 @@
+# robots.txt for CCBI - Centre des Compétences BTP & Industries
+# https://www.ccbi-afrique.com
+
+# Allow all search engines to crawl
+User-agent: *
+Allow: /
+
+# Specific directives for better crawling
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin and private areas (adjust as needed)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://www.ccbi-afrique.com/sitemap.xml
+
+# Crawl delay (optional - milliseconds)
+Crawl-delay: 1

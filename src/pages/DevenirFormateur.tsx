@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Phone } from 'lucide-react';
 import Footer from '../components/Footer';
 
@@ -20,6 +21,14 @@ export default function DevenirFormateur() {
 
   return (
     <main className="min-h-screen bg-gray-50 pt-24">
+      <Helmet>
+        <title>Devenir Formateur | Rejoignez CCBI</title>
+        <meta name="description" content="Rejoignez notre réseau de formateurs. Intervenez en entreprise, concevez des parcours et transmettez votre savoir chez CCBI." />
+        <meta name="keywords" content="formateur, expertise, intervention, formation, partenariat, CCBI" />
+        <link rel="canonical" href="https://www.ccbi-afrique.com/devenir-formateur" />
+        <meta property="og:title" content="Devenir Formateur - CCBI" />
+        <meta property="og:description" content="Rejoignez notre réseau d'experts : intervenez en entreprise et transmettez votre savoir" />
+      </Helmet>
       <header className="relative">
         <div
           className="h-64 md:h-80 bg-cover bg-center flex items-center relative"
@@ -63,11 +72,14 @@ export default function DevenirFormateur() {
               <input required value={name} onChange={e => setName(e.target.value)} placeholder="Nom complet" className="w-full px-4 py-3 border rounded-lg" />
               <input required value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" className="w-full px-4 py-3 border rounded-lg" />
               <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="Numéro WhatsApp (Avec l'indicatif du pays)" className="w-full px-4 py-3 border rounded-lg" />
-              <select value={topic} onChange={e => setTopic(e.target.value)} className="w-full px-4 py-3 border rounded-lg">
-                <option value="formation">Proposition de module</option>
-                <option value="intervention">Intervention en intra</option>
-                <option value="partenariat">Partenariat pédagogique</option>
-              </select>
+              <div>
+                <label htmlFor="topic-select" className="block text-sm font-semibold text-gray-700 mb-2">Sujet d'intérêt</label>
+                <select id="topic-select" value={topic} onChange={e => setTopic(e.target.value)} className="w-full px-4 py-3 border rounded-lg">
+                  <option value="formation">Proposition de module</option>
+                  <option value="intervention">Intervention en intra</option>
+                  <option value="partenariat">Partenariat pédagogique</option>
+                </select>
+              </div>
               <textarea value={message} onChange={e => setMessage(e.target.value)} rows={4} placeholder="Message (expérience, domaines, disponibilités)" className="w-full px-4 py-3 border rounded-lg resize-none" />
               <button type="submit" className="w-full bg-[#f5a623] text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2">
                 <Phone size={18} /> Nous contacter via WhatsApp

@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ChevronLeft, Clock, DollarSign, CalendarDays, ChevronRight } from 'lucide-react';
 import { programsData } from '../data/programs';
 
@@ -79,7 +80,16 @@ export default function ExpertiseDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <>
+      <Helmet>
+        <title>Filières d'Expertises | Nos Formations | CCBI</title>
+        <meta name="description" content="Découvrez nos filières d'expertise en Génie Civil et BTP, Industrie et Maintenance, Mines et Pétrole. Formations professionnelles qualifiantes." />
+        <meta name="keywords" content="génie civil, BTP, industries, maintenance, mines, pétrole, formations, expertise, CCBI" />
+        <link rel="canonical" href="https://www.ccbi-afrique.com/expertise" />
+        <meta property="og:title" content="Filières d'Expertises - CCBI" />
+        <meta property="og:description" content="Explorez nos formations par filière et domaine de spécialisation" />
+      </Helmet>
+      <div className="min-h-screen bg-white pt-20">
       <button
         onClick={() => navigate('/')}
         className="fixed top-24 left-4 md:left-8 z-40 bg-[#1a2940] text-white p-2 rounded-lg hover:bg-[#f5a623] transition-colors flex items-center gap-2"
@@ -183,6 +193,9 @@ export default function ExpertiseDetail() {
                       <img
                         src={program.image}
                         alt={program.title}
+                        width={400}
+                        height={300}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -275,6 +288,7 @@ export default function ExpertiseDetail() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

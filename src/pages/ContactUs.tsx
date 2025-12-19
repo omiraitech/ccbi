@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Phone } from 'lucide-react';
 import Footer from '../components/Footer';
 
@@ -20,6 +21,14 @@ export default function ContactUs() {
 
   return (
     <main className="min-h-screen bg-gray-50 pt-24">
+      <Helmet>
+        <title>Contactez-nous | CCBI - Centre des Compétences BTP & Industries</title>
+        <meta name="description" content="Contactez CCBI pour toute question sur nos formations, nos services ou pour prendre rendez-vous. Nous sommes à votre écoute." />
+        <meta name="keywords" content="contact, CCBI, formations, support, WhatsApp, email" />
+        <link rel="canonical" href="https://www.ccbi-afrique.com/contact" />
+        <meta property="og:title" content="Contactez-nous - CCBI" />
+        <meta property="og:description" content="Besoin d'information ? Écrivez-nous ou contactez-nous directement via WhatsApp." />
+      </Helmet>
       <header className="relative">
         <div
           className="h-64 md:h-80 bg-cover bg-center flex items-center relative"
@@ -46,7 +55,7 @@ export default function ContactUs() {
           <div>
             {/* compact contact/info card to occupy left column */}
             <div className="bg-white rounded-lg shadow-md p-6 h-full flex flex-col">
-              <img src="https://images.pexels.com/photos/3182768/pexels-photo-3182768.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="contact" className="w-full h-40 object-cover rounded-md mb-4"/>
+              <img src="https://images.pexels.com/photos/3182768/pexels-photo-3182768.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="contact" width={1200} height={300} loading="lazy" className="w-full h-40 object-cover rounded-md mb-4"/>
               <h3 className="text-xl font-bold text-[#1a2940] mb-2">Nos coordonnées</h3>
               <p className="text-gray-700 mb-3">Adresse: 123 Avenue John Doe, Yaoundé</p>
               <p className="text-gray-700 mb-3">Tel: +237 6XXXXXXXX</p>
@@ -64,13 +73,16 @@ export default function ContactUs() {
               <input required value={name} onChange={e => setName(e.target.value)} placeholder="Nom complet" className="w-full px-4 py-3 border rounded-lg" />
               <input required value={email} onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" className="w-full px-4 py-3 border rounded-lg" />
               <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="Numéro WhatsApp (Avec l'indicatif du pays)" className="w-full px-4 py-3 border rounded-lg" />
-              <select value={motif} onChange={e => setMotif(e.target.value)} className="w-full px-4 py-3 border rounded-lg">
-                <option>Formation</option>
-                <option>Partenariat</option>
-                <option>Sponsoring</option>
-                <option>Devenir Formateur</option>
-                <option>Formations pour entreprises</option>
-              </select>
+              <div>
+                <label htmlFor="motif-select" className="block text-sm font-semibold text-gray-700 mb-2">Motif de contact</label>
+                <select id="motif-select" value={motif} onChange={e => setMotif(e.target.value)} className="w-full px-4 py-3 border rounded-lg">
+                  <option>Formation</option>
+                  <option>Partenariat</option>
+                  <option>Sponsoring</option>
+                  <option>Devenir Formateur</option>
+                  <option>Formations pour entreprises</option>
+                </select>
+              </div>
               <textarea value={message} onChange={e => setMessage(e.target.value)} rows={4} placeholder="Votre message..." className="w-full px-4 py-3 border rounded-lg resize-none" />
               <button type="submit" className="w-full bg-[#f5a623] text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2">
                 <Phone size={18} /> Contacter via WhatsApp

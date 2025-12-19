@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Phone } from 'lucide-react';
 import Footer from '../components/Footer';
 
@@ -20,6 +21,14 @@ export default function DevenirPartenaire() {
 
   return (
     <main className="min-h-screen bg-gray-50 pt-24">
+      <Helmet>
+        <title>Devenir Partenaire | Collaborez avec CCBI</title>
+        <meta name="description" content="Collaborez avec CCBI pour co-construire des programmes, recruter des talents et former vos équipes. Découvrez nos offres de partenariat." />
+        <meta name="keywords" content="partenaire, partenariat, collaboration, co-construction, formations, CCBI" />
+        <link rel="canonical" href="https://www.ccbi-afrique.com/devenir-partenaire" />
+        <meta property="og:title" content="Devenir Partenaire - CCBI" />
+        <meta property="og:description" content="Collaborez avec CCBI pour co-construire des programmes et former vos équipes" />
+      </Helmet>
       <header className="relative">
         <div
           className="h-64 md:h-80 bg-cover bg-center flex items-center relative"
