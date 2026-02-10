@@ -43,7 +43,7 @@ export default function Contact() {
                   <h4 className="font-semibold text-[#1a2940] mb-1">Adresse</h4>
                   <p className="text-gray-600">
                     123 Avenue John Doe<br />
-                    Yaoundé, Cameroun
+                    Maroua, Cameroun
                   </p>
                 </div>
               </div>
