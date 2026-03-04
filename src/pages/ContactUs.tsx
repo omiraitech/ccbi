@@ -14,7 +14,7 @@ export default function ContactUs() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = '237696274761';
+    const phoneNumber = '237653867574';
     const text = `Bonjour CCBI,Je vous contacte depuis le formulaire Contact.\nNom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\nMotif: ${motif}\nMessage: ${message}`;
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };

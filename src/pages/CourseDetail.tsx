@@ -11,7 +11,7 @@ export default function CourseDetail() {
   const [expandedModule, setExpandedModule] = useState<number | null>(null);
 
   const handleCourseRegistrationClick = () => {
-    const phone = '237696274761';
+    const phone = '237653867574';
     const message = `Bonjour CCBI, je souhaite m'inscrire à la formation ${program?.title}, pouvez-vous m'en dire plus?`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');

@@ -70,7 +70,7 @@ export default function ExpertiseDetail() {
 
   const handleCourseClick = (courseId: string, isVisible: boolean, title: string) => {
     if (!isVisible) {
-      const phone = '237696274761';
+      const phone = '237653867574';
       const message = `Bonjour CCBI, je souhaite en savoir plus sur la formation ${title}, pouvez-vous m'en dire plus?`;
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');

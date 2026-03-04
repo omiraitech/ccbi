@@ -2,7 +2,7 @@ import { Hammer } from 'lucide-react';
 
 export default function MaintenancePage() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '237696274761';
+    const phoneNumber = '237653867574';
     const text = 'Bonjour CCBI, j\'aimerais avoir des informations sur vos services ou formations.';
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };

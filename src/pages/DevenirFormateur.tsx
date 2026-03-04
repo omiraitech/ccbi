@@ -14,7 +14,7 @@ export default function DevenirFormateur() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = '237696274761';
+    const phoneNumber = '237653867574';
     const text = `Bonjour CCBI, je souhaite devenir formateur.\nNom: ${name}\nEmail: ${email}\nTel: ${phone}\nSujet: ${topic}\nMessage: ${message}`;
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };

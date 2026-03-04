@@ -14,7 +14,7 @@ export default function DevenirPartenaire() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = '237696274761';
+    const phoneNumber = '237653867574';
     const text = `Bonjour CCBI, demande partenariat.\nNom: ${name}\nEntreprise: ${company}\nEmail: ${email}\nTel: ${phone}\nMessage: ${message}`;
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };

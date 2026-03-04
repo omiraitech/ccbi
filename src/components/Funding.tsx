@@ -2,7 +2,7 @@ import { Phone } from 'lucide-react';
 
 export default function Funding() {
   const handleContactClick = () => {
-    const phone = '237696274761';
+    const phone = '237653867574';
     const message = `Bonjour CCBI, je souhaite bénéficier d'une aide pour ma formation, pouvez-vous m'en dire plus sur la procédure?`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
